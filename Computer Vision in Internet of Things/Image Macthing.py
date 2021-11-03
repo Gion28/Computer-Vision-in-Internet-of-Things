@@ -21,21 +21,21 @@ tabs.add(tkinter.Frame(tabs), text="Attendance")
 tabs.add(tkinter.Frame(tabs), text="Registation")
 
 #Widget inside tabs
-label_curtime = tkinter.Label(root, font=("Bahnsschrift Light",24))
+label_curtime = tkinter.Label(root)
 
 label_font_families = tkinter.Label(tabs.nametowidget(tabs.tabs()[0]), text="font-family :")
 
 comboBox_curtime_font_families = ttk.Combobox(tabs.nametowidget(tabs.tabs()[0]))
 comboBox_curtime_font_families["values"] = font.families()
 comboBox_curtime_font_families["state"] = "readonly"
-comboBox_curtime_font_families.set("Bahnsschrift Light")
+comboBox_curtime_font_families.current(19)
 
 label_font_size = tkinter.Label(tabs.nametowidget(tabs.tabs()[0]), text="font-size :")
 
 comboBox_curtime_font_size = ttk.Combobox(tabs.nametowidget(tabs.tabs()[0]))
 comboBox_curtime_font_size["values"] = (24,36,48)
 comboBox_curtime_font_size["state"] = "readonly"
-comboBox_curtime_font_size.set(24)
+comboBox_curtime_font_size.current(1)
 
 """
 Widgets Functions
