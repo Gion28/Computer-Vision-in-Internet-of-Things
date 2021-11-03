@@ -21,8 +21,9 @@ tabs.add(tkinter.Frame(tabs), text="Attendance")
 tabs.add(tkinter.Frame(tabs), text="Registation")
 
 #Widget inside tabs
-label_curtime = tkinter.Label(root)
+label_curtime = tkinter.Label(root, font=(font.families()[19], 24))
 
+label_font = tkinter.Label(tabs.nametowidget(tabs.tabs()[0]), text="Time")
 label_font_families = tkinter.Label(tabs.nametowidget(tabs.tabs()[0]), text="font-family :")
 
 comboBox_curtime_font_families = ttk.Combobox(tabs.nametowidget(tabs.tabs()[0]))
@@ -35,7 +36,7 @@ label_font_size = tkinter.Label(tabs.nametowidget(tabs.tabs()[0]), text="font-si
 comboBox_curtime_font_size = ttk.Combobox(tabs.nametowidget(tabs.tabs()[0]))
 comboBox_curtime_font_size["values"] = (24,36,48)
 comboBox_curtime_font_size["state"] = "readonly"
-comboBox_curtime_font_size.current(1)
+comboBox_curtime_font_size.current(0)
 
 """
 Widgets Functions
@@ -58,10 +59,11 @@ Widget Packing
 """
 tabs.pack(expand=True, fill=tkinter.BOTH)
 label_curtime.pack()
-label_font_size.grid(row=0,column=0)
-comboBox_curtime_font_size.grid(row=0,column=1)
-label_font_families.grid(row=1,column=0)
-comboBox_curtime_font_families.grid(row=1,column=1)
+label_font.pack()
+label_font_size.pack()
+comboBox_curtime_font_size.pack()
+label_font_families.pack()
+comboBox_curtime_font_families.pack()
 
 """
 Main Loop
